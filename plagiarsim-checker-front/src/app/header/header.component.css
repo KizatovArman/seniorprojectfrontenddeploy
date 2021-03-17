@@ -1,3 +1,38 @@
 .navbar {
-    box-shadow: 12px 12px 22px gray;
+    background-color: rgb(31, 31, 31)  !important;
+}
+
+.navbar .navbar-brand {
+    color: coral;
+    font-family: 'Fira Code', monospace;
+    font-size: larger;
+}
+
+.navbar .navbar-nav .nav-item a {
+    color: white !important;
+    font-family: 'Fira Code', monospace;
+    font-size: large;
+}
+
+.navbar .navbar-nav .nav-item a:hover {
+    color: coral !important;
+}
+
+.navbar .navbar-nav .move-right {
+    margin-right: 3em;
+}
+
+@media (max-width: 320px) {
+    .navbar .navbar-brand {
+        margin-left: .5em;
+        margin-right: 0em !important;
+    }
+
+    .navbar .navbar-toggler {
+        margin-right: .5em;
+    }
+    .navbar .navbar-nav{
+        display: block;
+        margin: auto;
+    }
 }
