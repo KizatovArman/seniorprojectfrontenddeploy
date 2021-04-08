@@ -8,6 +8,14 @@
     font-size: larger;
 }
 
+.navbar-brand {
+    margin-left: 5em;
+}
+
+.navbar-collapse {
+    margin-right: 5em;
+}
+
 .navbar .navbar-nav .nav-item a {
     color: white !important;
     font-family: 'Fira Code', monospace;
@@ -22,8 +30,60 @@
     margin-right: 3em;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 2560px) {
+    .navbar {
+        font-size: large;
+    }
+}
+
+@media (max-width: 1920px) {
+    .navbar {
+        font-size: large;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar-brand {
+        margin-left: 3em;
+    }
+
+    .navbar .nav-item .move-right {
+        margin-right: 3em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar-brand {
+        margin: 0;
+    }
+
+    .navbar-collapse {
+        margin: 0;
+    }
+
+    .navbar .nav-item .move-right {
+        margin-right: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: large;
+    }
+
+    .navbar-brand, 
+    .navbar-collapse {
+        margin: 0;
+    }
+
+    .navbar .nav-item .move-right {
+        margin: 0;
+    }
+}
+
+@media (max-width: 320px), (max-width: 375px), (max-width: 425px) {
     .navbar .navbar-brand {
+        font-size: medium;
         margin-left: .5em;
         margin-right: 0em !important;
     }
@@ -34,5 +94,17 @@
     .navbar .navbar-nav{
         display: block;
         margin: auto;
+    }
+
+    .navbar-collapse {
+        margin: auto;
+    }
+    
+    .navbar .navbar-nav .move-right {
+        margin: auto;
+    }
+
+    .navbar .navbar-nav .nav-item a {
+        text-align: center;
     }
 }
