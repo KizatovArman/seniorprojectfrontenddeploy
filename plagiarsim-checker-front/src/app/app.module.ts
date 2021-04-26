@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ClassProvider, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,8 @@ import { CheckerComponent } from './checker/checker.component';
 import { ProviderService } from './shared/services/provider.service';
 import { AuthInterceptor } from './AuthInterceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,17 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     FooterComponent,
     LoginpageComponent,
     RegistercomponentComponent,
-    CheckerComponent
+    CheckerComponent,
+    NotfoundComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProviderService,
