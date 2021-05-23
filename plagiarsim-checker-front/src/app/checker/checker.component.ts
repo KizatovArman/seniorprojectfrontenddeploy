@@ -49,9 +49,9 @@ export class CheckerComponent implements OnInit {
     } 
     console.log(formValues.language);
     console.log(this.fileString);
-    this.provider.checkCode(checkData).then(res => {
-      console.log(res);
-    })
+    // this.provider.checkCode(checkData).then(res => {
+    //   console.log(res);
+    // })
   }
 
 }
