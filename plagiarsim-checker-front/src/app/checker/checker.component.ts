@@ -34,7 +34,7 @@ export class CheckerComponent implements OnInit {
   ngOnInit(): void {
     const jwtServiceHelper = new JwtHelperService();
     this.token = this._authService.getToken();
-    console.log(jwtServiceHelper.decodeToken(this.token));
+    // console.log(jwtServiceHelper.decodeToken(this.token));
     this.fileString = "";
     this.mlResult = "";
     this.fileExtension = "";
@@ -84,17 +84,17 @@ export class CheckerComponent implements OnInit {
       language: this.fileExtension,
       text: this.fileString
     } 
-    console.log(this.fileString);
+    // console.log(this.fileString);
     let token = this._authService.getToken();
     // console.log(this.fileExtension);
     // console.log(this.fileString);
     let req = await this.provider.checkCode(checkData,token);
     if(req.ok) {    
       let jsonResponse:IBackCheckResponse = await req.json();
-      console.log(jsonResponse);
-      console.log(jsonResponse.result)      
+      // console.log(jsonResponse);
+      // console.log(jsonResponse.result)      
       this.checkByJackard = (Math.floor((jsonResponse.result*100)) <= 100) ? Math.floor((jsonResponse.result*100)) : 100;
-      console.log(this.checkByJackard);    
+      // console.log(this.checkByJackard);    
       setTimeout(() => { this.successfullyCheckedwithBack = true;}, 2000);
     }
     else {
@@ -121,19 +121,19 @@ export class CheckerComponent implements OnInit {
     }
     this.provider.checkWithML(checkData, googleToken).then(res => {
       if(res.predictions.length > 0) {
-        console.log(res);
-        console.log(res.predictions[0]);
+        // console.log(res);
+        // console.log(res.predictions[0]);
         if(res.predictions[0] === " 0") {
           this.successfullyCheckedwithML = true;
           this.mlResult = "Not Plagiarised";
           this.isPlagiarisedByML = false;
-          console.log(res)
+          // console.log(res)
         }
         else if(res.predictions[0] === " 1") {
           this.successfullyCheckedwithML = true;
           this.mlResult = "Plagiarised";
           this.isPlagiarisedByML = true;
-          console.log(res)
+          // console.log(res)
         }
       }
       else {

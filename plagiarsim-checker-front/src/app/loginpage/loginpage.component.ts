@@ -40,7 +40,7 @@ export class LoginpageComponent implements OnInit {
     }
   
     this.provider.login(loginData).then(res => {
-      console.log(formValue);
+      // console.log(formValue);
       if(res.success) {
         //console.log(res);
         this.authService.setDataInLocalStorage("antiplagiarismtoken", res.token);

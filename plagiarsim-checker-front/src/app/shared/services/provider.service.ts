@@ -19,7 +19,7 @@ export class ProviderService extends MainService {
   }
 
   login(loginData: ILoginData):Promise<ILoginResponse> {
-    return this.post(this.url + ":" + this.port + "/api/signin/", {
+    return this.post(encodeURI("https://diploma-project-backend.herokuapp.com/api/signin/"), {
       username: loginData.username,
       password: loginData.password
     })
@@ -27,14 +27,14 @@ export class ProviderService extends MainService {
 
   //http://localhost:3000/api/signup/
   register(registrationData: IRegistrationData): Promise<IAuthSuccess> {
-    return this.post(this.url + ":" + this.port + "/api/signup/", {
+    return this.post(encodeURI("https://diploma-project-backend.herokuapp.com/api/signup/"), {
       username: registrationData.username,
       password: registrationData.password
     })
   }
   
   logout(token: string): Promise<Response> {
-    let url = encodeURI(this.url + ":" + this.port + "/api/signout/");
+    let url = encodeURI("https://diploma-project-backend.herokuapp.com/api/signout/");
     let req = fetch(url, {
       headers: {
         'Authorization': token
@@ -44,7 +44,7 @@ export class ProviderService extends MainService {
   }
 
   checkCode(checkData: ICheckData, token: string): Promise<Response> {
-    let url = encodeURI(this.url + ":" + this.port + "/api/check");
+    let url = encodeURI("https://diploma-project-backend.herokuapp.com/api/check/");
     let req = fetch(url, {
       method: 'POST',
       headers: {
