@@ -1,0 +1,52 @@
+.container {
+    font-family: 'Fira Code', monospace;
+}
+
+.form {
+    margin: auto;
+}
+
+.form__form {
+    margin: auto;
+}
+
+.form-row {
+    margin: auto;
+}
+
+img {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.row {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px gray;
+}
+
+div.backgrd {
+    background: rgb(199, 199, 199);
+}
+
+div.moveform {
+    padding-left: 3em;
+    padding-top: 3em;
+}
+
+.btn1 {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn1:hover {
+    background-color: white;
+    border: 1px solid;
+    color: black;
+}

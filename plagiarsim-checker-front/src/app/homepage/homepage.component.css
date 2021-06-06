@@ -1,0 +1,40 @@
+.lead {
+    margin: 0;
+}
+
+.container {
+    font-family: 'Fira Code', monospace;
+}
+
+.text {
+    color: white;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    text-align: center;
+}
+
+.text-yellow {
+    color: goldenrod;
+}
+
+.text-coral {
+    text-align: center;
+    padding-top: 1.5em;
+    color: coral;
+}
+
+.text-green {
+    color: rgb(167, 255, 35);
+}
+
+.text-purple {
+    color: rgb(173, 104, 237);
+}
+
+.text-blue {
+    color: rgb(0, 180, 255);
+}
+
+.last-element {
+    padding-bottom: 5em;
+}

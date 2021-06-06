@@ -1,7 +1,11 @@
 footer {
-    background-color: #3f3f3f;
+    background-color: rgb(38, 38, 38);
     color: #d5d5d5;
     padding-top: 2rem;
+}
+
+.text-styling {
+    font-family: 'Fira Code', monospace;
 }
 
 hr.light {
@@ -16,6 +20,11 @@ hr.light-100 {
     width: 100%;
     margin-top: .8rem;
     /* margin-bottom: 1rem; */
+}
+
+.copy-rights {
+    color: coral;
+    font-family: 'Fira Code', monospace;
 }
 
 @media (max-width: 2560px) {

@@ -1,0 +1,28 @@
+<section class="text py-5">
+    <div class="container">
+        <form [formGroup]="form" (ngSubmit)="checkForPlagiarism()">        
+            <div *ngIf="successfullyCheckedwithML" class="input__wrapper">
+                <h1 *ngIf="isPlagiarisedByML==false" [ngClass]="{not_plagiarised_byml:!isPlagiarisedByML}">{{mlResult}}</h1>
+                <h1 *ngIf="isPlagiarisedByML" [ngClass]="{plagiarised_byml:isPlagiarisedByML}">{{mlResult}}</h1>
+            </div>
+            <div *ngIf="successfullyCheckedwithBack" class="input__wrapper">
+                <p class="text-yellow">By Jackard's Algorithm your code is plagiarised by {{checkByJackard}}%.</p>
+                <progress max="100" value="{{checkByJackard}}"></progress>
+            </div>
+            <div class="input__wrapper">            
+                <button class="btn-primary mt-3" *ngIf="(successfullyCheckedwithBack || successfullyCheckedwithML)" (click)="again()">Again?</button>
+            </div>  
+            <div *ngIf="(successfullyCheckedwithBack==false && successfullyCheckedwithML==false)" class="input__wrapper mt-5">
+                <input name="file" type="file" name="file" id="input__file" class="input input__file" (change)="onFileSelect($event)">
+                <label for="input__file" class="input__file-button">
+                   <span class="input__file-icon-wrapper"><img class="input__file-icon" src="../../assets/img/add-file.svg" alt="Выбрать файл" width="50"></span>
+                   <span class="input__file-button-text">Choose file</span>
+                </label>
+            </div>
+            <div class="input__wrapper">
+                <button *ngIf="(successfullyCheckedwithBack==false)" type="submit" class="btn-primary mt-3">Check</button>
+                <button *ngIf="(successfullyCheckedwithML==false && checkwithMLbool)" class="btn-primary mt-3" (click)="checkWithML()">Check with Machine Learning</button>
+            </div>              
+        </form>
+    </div>
+</section>

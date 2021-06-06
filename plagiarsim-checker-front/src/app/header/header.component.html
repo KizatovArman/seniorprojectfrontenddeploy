@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark sticky-top">
     <div class="container-fluid my-4">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" routerLink="/home" routerLinkActive="active">
             Anti-Plagiarism
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -9,18 +9,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item move-right">
-                    <a href="#" class="nav-link">Home</a>
+                    <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item move-right">
-                    <a href="#" class="nav-link">Checker</a>
+                <li *ngIf="loggedIn" class="nav-item move-right">
+                    <a routerLink="/checker" routerLinkActive="active" class="nav-link">Checker</a>
                 </li>
-                <li class="nav-item move-right">
-                    <a href="#" class="nav-link">Login</a>
+                <li *ngIf="!loggedIn" class="nav-item move-right">
+                    <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Register</a>
+                <li *ngIf="!loggedIn" class="nav-item">
+                    <a routerLink="/register" routerLinkActive="active" class="nav-link">Register</a>
+                </li>
+                <li *ngIf="loggedIn" class="nav-item" (click)="logout()">
+                    <a class="nav-link">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
-    </nav>
+</nav>

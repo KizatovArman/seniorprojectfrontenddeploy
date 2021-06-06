@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(31, 31, 31)  !important;
+    background-color: rgb(38, 38, 38)  !important;
 }
 
 .navbar .navbar-brand {
@@ -32,13 +32,13 @@
 
 @media (max-width: 2560px) {
     .navbar {
-        font-size: x-large;
+        font-size: large;
     }
 }
 
 @media (max-width: 1920px) {
     .navbar {
-        font-size: larger;
+        font-size: large;
     }
 }
 
@@ -67,6 +67,10 @@
 }
 
 @media (max-width: 768px) {
+    .navbar-brand {
+        font-size: large;
+    }
+
     .navbar-brand, 
     .navbar-collapse {
         margin: 0;
@@ -79,6 +83,7 @@
 
 @media (max-width: 320px), (max-width: 375px), (max-width: 425px) {
     .navbar .navbar-brand {
+        font-size: medium;
         margin-left: .5em;
         margin-right: 0em !important;
     }
