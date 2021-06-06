@@ -19,8 +19,8 @@ export class RegistercomponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      email:['', Validators.required, Validators.email],
-      password:['', Validators.required, Validators.minLength(8)] 
+      email:['', Validators.email],
+      password:['', Validators.minLength(8)] 
     });
   }
 
@@ -33,12 +33,10 @@ export class RegistercomponentComponent implements OnInit {
     }
 
     this.provider.register(registerData).then(res => {
-      if(res.token.length > 0) {
-        this.authService.setDataInLocalStorage("antiplagiarismtoken", res.token);
-        this.authService.setDataInLocalStorage("antiplagiarismuserId", res._id);
-        this.authService.setDataInLocalStorage("antiplagiarismEmail", res.email);
+      if(res.success) {
+        window.alert("Congratulations! You have successfully registered! Now, please login and use checker.")
       } else {
-        window.alert(res.message);
+        window.alert("Error occured during process! Please try again later!");
       } 
     })
   }

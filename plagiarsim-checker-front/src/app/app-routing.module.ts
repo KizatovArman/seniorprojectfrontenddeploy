@@ -7,15 +7,19 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { RegistercomponentComponent } from './registercomponent/registercomponent.component';
 
 import { AuthGuardService } from './shared/services/auth-guard.service';
+import { CheckerGuardService } from './shared/services/checker-guard.service'; 
+import { UpdaterComponent } from './updater/updater.component';
 
 const routes: Routes = [
   {
     path: "login",
-    component: LoginpageComponent
+    component: LoginpageComponent,
+    canActivate: [CheckerGuardService]
   },
   {
     path: "register",
-    component: RegistercomponentComponent
+    component: RegistercomponentComponent,
+    canActivate: [CheckerGuardService]
   },
   {
     path: 'checker',
@@ -25,6 +29,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomepageComponent
+  },
+  {
+    path: 'very/secret/path/to/update/google/token/because/we/can/not',
+    component: UpdaterComponent
   },
   {
     path: '',

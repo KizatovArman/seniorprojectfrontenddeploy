@@ -13,16 +13,18 @@ export interface IAuthError {
 }
 
 export interface IAuthSuccess {
-    _id: string,
-    email: string,
-    token: string
+    success: boolean,
+    msg: string
 }
 
 export interface ILoginResponse {
-    _id: string,
-    email: string,
-    token: string,
-    message: string
+    success: boolean,
+    token: string
+}
+
+export interface ILogoutSuccess {
+    success: boolean,
+    msg: string
 }
 
 export interface ICheckResponse {
@@ -30,6 +32,22 @@ export interface ICheckResponse {
 }
 
 export interface ICheckData { 
-    text: string,
-    language: string
+    language: string,
+    text: string
+}
+
+export interface IGoogleCloud { 
+    instances: number[][]
+}
+
+export interface IGoogleCloudSuccess {
+    predictions: string[]
+}
+
+export interface GoogleToken {
+    token: string
+}
+
+export interface IBackCheckResponse {
+    result: number
 }

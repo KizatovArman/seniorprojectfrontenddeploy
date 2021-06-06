@@ -5,13 +5,14 @@
 export const environment = {
   production: false
 };
-
+//http://localhost:3000/
 export const api_url = {
   url: "http://localhost"
+  // url: "http://localhost"
 };
 
 export const api_port = {
-  port: 5000
+  port: 3000 //5000
 };
 
 /*

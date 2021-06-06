@@ -1,3 +1,7 @@
+.container {
+    font-family: 'Fira Code', monospace;
+}
+
 img {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;

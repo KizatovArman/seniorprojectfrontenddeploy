@@ -15,6 +15,7 @@ import { AuthInterceptor } from './AuthInterceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { UpdaterComponent } from './updater/updater.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     RegistercomponentComponent,
     CheckerComponent,
     NotfoundComponent,
-    HomepageComponent
+    HomepageComponent,
+    UpdaterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { HomepageComponent } from './homepage/homepage.component';
   ],
   providers: [
     ProviderService,
-    <ClassProvider> {
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true

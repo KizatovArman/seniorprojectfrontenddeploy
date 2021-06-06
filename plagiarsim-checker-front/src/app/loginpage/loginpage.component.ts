@@ -3,6 +3,7 @@ import { ProviderService } from '../shared/services/provider.service';
 import { ILoginData, IAuthError, IAuthSuccess } from '../shared/models/models';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
+import { ok } from 'assert';
 
 @Component({
   selector: 'app-loginpage',
@@ -37,15 +38,17 @@ export class LoginpageComponent implements OnInit {
       username: formValue.email,
       password: formValue.password
     }
-
+  
     this.provider.login(loginData).then(res => {
       console.log(formValue);
-      if(res.token.length > 0) {
+      if(res.success) {
+        //console.log(res);
         this.authService.setDataInLocalStorage("antiplagiarismtoken", res.token);
-        this.authService.setDataInLocalStorage("antiplagiarismuserId", res._id);
-        this.authService.setDataInLocalStorage("antiplagiarismEmail", res.email);
+        // this.authService.setDataInLocalStorage("antiplagiarismuserId", res.user._id);
+        // this.authService.setDataInLocalStorage("antiplagiarismEmail", res.user.email);
+        location.reload();
       } else {
-        window.alert(res.message);
+        window.alert("Error occured during process! Please try again later!");
       }              
     })
   }
